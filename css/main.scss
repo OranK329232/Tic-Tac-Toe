@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+* {
+    margin: 0 auto;
+    padding: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.screen {
+    background-color: rgb(51, 65, 129);
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    &.h-center {
+        justify-content: center;
+    }
+    &.v-center {
+        align-items: center;
+    }
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    gap: 5%;
+    width: 30vw;
+    height: 30vw;
+    .tile {
+        background-color: rgb(95, 108, 165);
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        aspect-ratio: 1/1;
+        &.playable:hover {
+            background-color: rgba(255, 255, 255, 0.568);
+        }
+        &.played {
+            background-color: rgb(92, 97, 114);
+            &:hover {
+                pointer-events: none;
+            }
+        }
+    }
+    .x-tile {
+        background-image: url('../images/X.svg');
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .o-tile {
+        background-image: url('../images/O.svg');
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+#player-indicator {
+    font-size: 2.5em;
+    padding: 2%;
+}
+
+#reset-button {
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    margin: 2%;
+    background-color: rgb(95, 108, 165);
+    text-decoration: none;
+    color: black;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.568);
+    }
+}
